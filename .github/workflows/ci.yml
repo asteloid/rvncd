@@ -25,7 +25,7 @@ jobs:
             if [ "$v" = latest ]; then
               declare -r cur_yt=$(sed -n 's/.*YouTube: \(.*\)/\1/p' build.md | xargs)
               [ -z "$cur_yt" ] && return 1 # empty, fail=>dont build
-              declare -r last_ver=$(get_apk_vers "https://www.apkmirror.com/uploads/?appcategory=youtube" | get_largest_ver)
+              declare -r last_ver=$(get_apkmirror_vers "youtube" | get_largest_ver)
 
               echo "current yt version: $cur_yt"
               echo "latest yt version: $last_ver"
