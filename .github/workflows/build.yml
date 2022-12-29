@@ -41,7 +41,7 @@ jobs:
           cd build
           yt_op=$(find . -maxdepth 1 -name "youtube-*-all.zip" -printf '%P')
           dateout=$(date +'%Y%m%d')
-          echo "RELEASE_NAME=${dateout}" >> $GITHUB_OUTPUT
+          echo "RELEASE_NAME=v${dateout}" >> $GITHUB_OUTPUT
 
       - name: Upload modules to release
         uses: svenstaro/upload-release-action@v2
