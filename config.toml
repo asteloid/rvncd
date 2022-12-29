@@ -6,15 +6,15 @@ compression-level = 9         # compression level for module zips. between 1 and
 enable-magisk-update = true   # set this to false if you do not want to receive updates from magisk app
 parallel-jobs = 3             # max number of concurrent building jobs
 update-prebuilts = true       # dont touch this
-build-mindetach-module = true
+build-mindetach-module = false
 
 
 [YouTube]
 enabled = true                                                        # add 'enabled = false' key to entries to not build them
-build-mode = "both"                                                   # 'both', 'apk' or 'module'
-excluded-patches = "debugging"                                        # whitespace seperated list of patches to exclude
-included-patches = "theme"                                            # whitespace seperated list of patches to include
-version = "auto"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
+build-mode = "module"                                                   # 'both', 'apk' or 'module'
+excluded-patches = "debugging hide-create-button hide-cast-button"                                        # whitespace seperated list of patches to exclude
+included-patches = "theme force-premium-heading materialyou"                                            # whitespace seperated list of patches to include
+version = "latest"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
 exclusive-patches = false                                             # excludes all patches by default
 microg-patch = "microg-support"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
@@ -23,45 +23,53 @@ merge-integrations = true
 rip-libs = true
 
 [Music-arm64]
+enabled = true
 build-mode = "both"
 app-name = "Music"
-excluded-patches = ""
+excluded-patches = "hide-music-cast-button"
 included-patches = ""
-version = "auto"
+version = "latest"
 microg-patch = "music-microg-support"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytmusicrv-magisk"
 arch = "arm64-v8a"
+merge-integrations = true
 
 [Music-arm]
+enabled = true
 build-mode = "both"
 app-name = "Music"
-excluded-patches = ""
+excluded-patches = "hide-music-cast-button"
 included-patches = ""
-version = "auto"
+version = "latest"
 microg-patch = "music-microg-support"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytmusicrv-arm-magisk"
 arch = "arm-v7a"
+merge-integrations = true
 
 [Twitter]
+enabled = false
 build-mode = "apk"
 excluded-patches = ""
 version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitter-inc/twitter/"
 
 [Reddit]
+enabled = false
 build-mode = "apk"
 version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
 
 [Twitch]
+enabled = false
 build-mode = "apk"
 version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
 merge-integrations = true
 
 [Tiktok]
+enabled = false
 build-mode = "apk"
 version = "27.2.5"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
