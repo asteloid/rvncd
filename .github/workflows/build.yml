@@ -39,12 +39,9 @@ jobs:
           cp -f build.md build.tmp
 
           cd build
-          yt_op=$(find . -maxdepth 1 -name "youtube-revanced-magisk-*.zip" -printf '%P')
-          if [ -z "$yt_op" ]; then
-            echo "RELEASE_NAME=ReVanced" >> $GITHUB_OUTPUT
-          else
-            echo "RELEASE_NAME=$yt_op" >> $GITHUB_OUTPUT
-          fi
+          yt_op=$(find . -maxdepth 1 -name "youtube-*-all.zip" -printf '%P')
+          dateout=$(date +'%Y%m%d')
+          echo "RELEASE_NAME=${dateout}" >> $GITHUB_OUTPUT
 
       - name: Upload modules to release
         uses: svenstaro/upload-release-action@v2
@@ -74,8 +71,8 @@ jobs:
           }
 
           cd build || echo "build folder not found"
-          for OUTPUT in *revanced*.zip; do
-            [ "$OUTPUT" = "*revanced*.zip" ] && continue
+          for OUTPUT in *-v*.zip; do
+            [ "$OUTPUT" = "*-v*.zip" ] && continue
             ZIP_S=$(unzip -p "$OUTPUT" module.prop)
             if ! UPDATE_JSON=$(echo "$ZIP_S" | grep updateJson); then
               continue
