@@ -13,7 +13,7 @@ build-mindetach-module = false
 enabled = true                                                        # add 'enabled = false' key to entries to not build them
 build-mode = "module"                                                   # 'both', 'apk' or 'module'
 excluded-patches = "debugging hide-create-button hide-cast-button"                                        # whitespace seperated list of patches to exclude
-included-patches = "theme force-premium-heading materialyou"                                            # whitespace seperated list of patches to include
+included-patches = "theme custom-branding-icon-afn-blue custom-branding-icon-afn-red custom-branding-icon-revancify custom-branding-name force-premium-heading materialyou"                                            # whitespace seperated list of patches to include
 version = "latest"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
 exclusive-patches = false                                             # excludes all patches by default
 microg-patch = "microg-support"
@@ -24,7 +24,7 @@ rip-libs = true
 
 [Music-arm64]
 enabled = true
-build-mode = "both"
+build-mode = "module"
 app-name = "Music"
 excluded-patches = "hide-music-cast-button"
 included-patches = ""
@@ -37,7 +37,7 @@ merge-integrations = true
 
 [Music-arm]
 enabled = true
-build-mode = "both"
+build-mode = "module"
 app-name = "Music"
 excluded-patches = "hide-music-cast-button"
 included-patches = ""
