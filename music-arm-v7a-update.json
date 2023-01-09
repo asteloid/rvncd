@@ -1,6 +1,6 @@
 {
   "version": "v5.38.53",
-  "versionCode": 20220912,
-  "zipUrl": "https://github.com/asteloid/rvncd/releases/download/20220912/music-v5.38.53-arm-v7a.zip",
+  "versionCode": 20220913,
+  "zipUrl": "https://github.com/asteloid/rvncd/releases/download/20220913/music-v5.38.53-arm-v7a.zip",
   "changelog": "https://raw.githubusercontent.com/asteloid/rvncd/update/build.md"
 }
